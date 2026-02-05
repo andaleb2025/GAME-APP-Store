@@ -100,6 +100,27 @@
 <footer>
     <p>حقوق النشر محفوظة © 2026 - Mahmoud Ahmed</p>
 </footer>
+<div class="container">
+    <div class="card">
+        <input type="text" id="searchInput" placeholder="ابحث عن لعبة أو برنامج..." style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 25px; text-align: center; font-size: 16px;">
+    </div>
+</div>
+
+<script>
+    // كود البحث الذكي
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+        let filter = this.value.toLowerCase();
+        let cards = document.querySelectorAll('.card');
+        
+        cards.forEach(card => {
+            let title = card.querySelector('h2');
+            if (title) {
+                let text = title.textContent.toLowerCase();
+                card.style.display = text.includes(filter) ? "" : "none";
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
