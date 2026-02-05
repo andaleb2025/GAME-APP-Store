@@ -102,25 +102,12 @@
 </footer>
 <div class="container">
     <div class="card">
-        <input type="text" id="searchInput" placeholder="ابحث عن لعبة أو برنامج..." style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 25px; text-align: center; font-size: 16px;">
+        <h3>قسم التعليقات والاستفسارات</h3>
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v19.0" nonce="12345"></script>
+        <div class="fb-comments" data-href="https://andaleb2025.github.io/GAME-APP-Store/" data-width="100%" data-numposts="5"></div>
     </div>
 </div>
-
-<script>
-    // كود البحث الذكي
-    document.getElementById('searchInput').addEventListener('keyup', function() {
-        let filter = this.value.toLowerCase();
-        let cards = document.querySelectorAll('.card');
-        
-        cards.forEach(card => {
-            let title = card.querySelector('h2');
-            if (title) {
-                let text = title.textContent.toLowerCase();
-                card.style.display = text.includes(filter) ? "" : "none";
-            }
-        });
-    });
-</script>
 
 </body>
 </html>
